@@ -13,7 +13,7 @@
           v-for="(slide, i) in itemsCarousel"
           :key="i + 'slide'"
           :name="slide.name"
-          :img-src="'src/assets/' + slide.url"
+          :img-src="'public/images/' + slide.url"
         >
           <div
             v-if="slide.title || slide.subtitle"
@@ -43,7 +43,7 @@
           class="caption row q-mt-md col-3 q-pa-md"
         >
           <q-card class="my-card full-width" flat bordered>
-            <q-img :src="'src/assets' + item.url" class="" />
+            <q-img :src="'public/images/' + item.url" class="" />
 
             <q-card-section>
               <div class="text-overline text-orange-9">{{ item.overline }}</div>
@@ -74,56 +74,56 @@ export default defineComponent({
     const itemsRef = ref([
       {
         id: 1,
-        url: "/0.jpg",
+        url: "0.jpg",
         overline: "Anime ",
         title: "YLEAFUN",
         desc: "Figure PVC Statue Cartoon Anime Girls Action Figure Model Collection Ornaments",
       },
       {
         id: 2,
-        url: "/1.png",
+        url: "1.png",
         overline: "Anime ",
         title: "HUNTER X HUNTER",
         desc: "MIREN LO QUE SON ESTAS FIGURAS ULTRA CHIBIS 🥰🥰",
       },
       {
         id: 3,
-        url: "/2.png",
+        url: "2.png",
         overline: "Anime ",
         title: "FIGURAS CHIBI DE JOJOS",
         desc: "Nos arriesgamos y trajimos figuras de jojos 😎💖",
       },
       {
         id: 4,
-        url: "/3.png",
+        url: "3.png",
         overline: "Anime ",
         title: "JUJUTSU KAISEN",
         desc: "Después de todo lo que pasó en el anime y manga, no podía faltar JUJUTSU KAISEN 🥺🥺🥺",
       },
       {
         id: 5,
-        url: "/4.png",
+        url: "4.png",
         overline: "Anime ",
         title: " KIMETSU ",
         desc: "AL FIN TRAJIMOS POSTERS DE KIMETSU 💥💥",
       },
       {
         id: 6,
-        url: "/5.png",
+        url: "5.png",
         overline: "Anime ",
         title: "TOKYO REVENGERS",
         desc: "Llegaron más pósters... y no podían faltar de💥💥💥💥💥TOKYO REVENGERS 💥💥💥💥💥",
       },
       {
         id: 7,
-        url: "/6.png",
+        url: "6.png",
         overline: "Anime ",
         title: "HAIKYUU",
         desc: "🔥🔥 Y QUE MEJOR FORMA DE FESTEJAR QUE TRAYENDO MAS FIGURAS DE HAIKYUU 🔥🔥",
       },
       {
         id: 8,
-        url: "/7.png",
+        url: "7.png",
         overline: "Anime ",
         title: "ONE PIECE",
         desc: "Mide 27 CM e incluye caja",
