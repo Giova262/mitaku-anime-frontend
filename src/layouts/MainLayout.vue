@@ -1,47 +1,40 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-pink-4 text-grey-2 q-pl-md">
-      <q-toolbar>
-        Telfefono/Whatsapp :
-        <q-btn round flat>
-          <q-avatar size="20px">
-            <img src="~assets/whatsapp.png" />
-          </q-avatar>
-        </q-btn>
+      <div class="flex q-py-sm">
+        <span class="q-pr-sm">Telfefono/Whatsapp: +54 911 2235 1904</span>
 
-        +54 911 2235 1904
-        <q-btn round flat>
-          <q-avatar size="20px">
-            <img src="~assets/gmail.png" />
-          </q-avatar>
-        </q-btn>
-        mitaku.anime@gmail.com
+        <q-avatar size="20px" class="q-mx-md">
+          <img src="~assets/whatsapp.png" />
+        </q-avatar>
+
+        <span class="q-px-sm q-mr-md">mitaku.anime@gmail.com</span>
+
+        <q-avatar size="20px" class="">
+          <img src="~assets/gmail.png" />
+        </q-avatar>
 
         <q-space />
-        <q-btn round flat>
-          <q-avatar size="20px">
-            <img src="~assets/facebook.png" />
-          </q-avatar>
-        </q-btn>
-        <q-btn round flat>
-          <q-avatar size="20px">
-            <img src="~assets/instagram.png" />
-          </q-avatar>
-        </q-btn>
-      </q-toolbar>
+
+        <q-avatar size="20px" class="">
+          <img src="~assets/facebook.png" />
+        </q-avatar>
+        <q-avatar size="20px">
+          <img src="~assets/instagram.png" />
+        </q-avatar>
+      </div>
     </q-header>
 
     <q-page-container>
       <router-view />
     </q-page-container>
 
-    <footer
+    <div
       class="q-pa-lg section footer-classic context-dark bg-image"
       style="background: #2d3246"
     >
       <div class="container">
         <div class="row row-30">
-
           <div class="col col-xl-5">
             <div class="pr-xl-4">
               <a class="brand" href="index.html"
@@ -57,7 +50,6 @@
                 result in web design, promotion, business consulting, and
                 marketing.
               </p>
-              <!-- Rights-->
               <p class="rights">
                 <span>© </span><span class="copyright-year">2023 </span
                 ><span> </span><span>Mitaku Anime</span><span> - </span
@@ -84,42 +76,9 @@
               </dd>
             </dl>
           </div>
-
         </div>
       </div>
-
-      <!-- <div class="row no-gutters social-container">
-        <div class="col">
-          <a class="social-inner" href="#"
-            ><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a
-          >
-        </div>
-        <div class="col">
-          <a class="social-inner" href="#"
-            ><span class="icon mdi mdi-instagram"></span
-            ><span>Instagram</span></a
-          >
-        </div>
-        <div class="col">
-          <a class="social-inner" href="#"
-            ><span class="icon mdi mdi-twitter"></span><span>Twitter</span></a
-          >
-        </div>
-        <div class="col">
-          <a class="social-inner" href="#"
-            ><span class="icon mdi mdi-youtube-play"></span
-            ><span>Youtube</span></a
-          >
-        </div>
-      </div> -->
-
-    </footer>
-<!--
-    <q-footer class="bg-grey-9 text-grey-2">
-      <q-toolbar class="">
-        <q-toolbar-title>Footer</q-toolbar-title>
-      </q-toolbar>
-    </q-footer> -->
+    </div>
   </q-layout>
 </template>
 
