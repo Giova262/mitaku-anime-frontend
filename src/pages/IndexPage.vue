@@ -7,19 +7,22 @@
         infinite
         v-model="slide"
         height="400px"
-        :autoplay="1000"
+        :autoplay="5000"
       >
         <q-carousel-slide
-          v-for="(slide, i) in itemsCarousel" :key="i + 'slide'"
+          v-for="(slide, i) in itemsCarousel"
+          :key="i + 'slide'"
           :name="slide.name"
-          :img-src="slide.url"
+          :img-src="'src/assets/' + slide.url"
         >
-          <div class="absolute-bottom custom-caption">
+          <div
+            v-if="slide.title || slide.subtitle"
+            class="absolute-bottom custom-caption"
+          >
             <div class="text-h2">{{ slide.title }}</div>
             <div class="text-subtitle1">{{ slide.subtitle }}</div>
           </div>
         </q-carousel-slide>
-
       </q-carousel>
     </div>
 
@@ -32,130 +35,22 @@
         @load="onLoadRef"
         :offset="250"
         :scroll-target="scrollTargetRef"
-        class="q-mt-md"
+        class="q-mt-md row"
       >
         <div
           v-for="(item, index) in itemsRef"
           :key="index"
-          class="caption row q-mt-md"
+          class="caption row q-mt-md col-3 q-pa-md"
         >
-          <div class="q-pa-md items-start q-gutter-md col">
-            <q-card class="my-card" flat bordered>
-              <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" />
+          <q-card class="my-card full-width" flat bordered>
+            <q-img :src="'src/assets' + item.url" class="" />
 
-              <q-card-section>
-                <div class="text-overline text-orange-9">Overline</div>
-                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-                <div class="text-caption text-grey">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </q-card-section>
-
-              <q-card-actions>
-                <q-btn flat color="primary" label="Share" />
-                <q-btn flat color="secondary" label="Book" />
-
-                <q-space />
-
-                <q-btn
-                  color="grey"
-                  round
-                  flat
-                  dense
-                  :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded = !expanded"
-                />
-              </q-card-actions>
-
-              <q-slide-transition>
-                <div v-show="expanded">
-                  <q-separator />
-                  <q-card-section class="text-subtitle2">
-                    {{ lorem }}
-                  </q-card-section>
-                </div>
-              </q-slide-transition>
-            </q-card>
-          </div>
-          <div class="q-pa-md items-start q-gutter-md col">
-            <q-card class="my-card" flat bordered>
-              <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" />
-
-              <q-card-section>
-                <div class="text-overline text-orange-9">Overline</div>
-                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-                <div class="text-caption text-grey">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </q-card-section>
-
-              <q-card-actions>
-                <q-btn flat color="primary" label="Share" />
-                <q-btn flat color="secondary" label="Book" />
-
-                <q-space />
-
-                <q-btn
-                  color="grey"
-                  round
-                  flat
-                  dense
-                  :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded = !expanded"
-                />
-              </q-card-actions>
-
-              <q-slide-transition>
-                <div v-show="expanded">
-                  <q-separator />
-                  <q-card-section class="text-subtitle2">
-
-                  </q-card-section>
-                </div>
-              </q-slide-transition>
-            </q-card>
-          </div>
-          <div class="q-pa-md items-start q-gutter-md col">
-            <q-card class="my-card" flat bordered>
-              <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" />
-
-              <q-card-section>
-                <div class="text-overline text-orange-9">Overline</div>
-                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-                <div class="text-caption text-grey">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-              </q-card-section>
-
-              <q-card-actions>
-                <q-btn flat color="primary" label="Share" />
-                <q-btn flat color="secondary" label="Book" />
-
-                <q-space />
-
-                <q-btn
-                  color="grey"
-                  round
-                  flat
-                  dense
-                  :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded = !expanded"
-                />
-              </q-card-actions>
-
-              <q-slide-transition>
-                <div v-show="expanded">
-                  <q-separator />
-                  <q-card-section class="text-subtitle2">
-
-                  </q-card-section>
-                </div>
-              </q-slide-transition>
-            </q-card>
-          </div>
+            <q-card-section>
+              <div class="text-overline text-orange-9">{{ item.overline }}</div>
+              <div class="text-h5 q-mt-sm q-mb-xs">{{ item.title }}</div>
+              <div class="text-caption text-grey">{{ item.desc }}</div>
+            </q-card-section>
+          </q-card>
         </div>
 
         <template v-slot:loading>
@@ -176,45 +71,111 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "IndexPage",
   setup() {
-    const itemsRef = ref([{}, {}, {}, {}, {}, {}, {}]);
+    const itemsRef = ref([
+      {
+        id: 1,
+        url: "/0.jpg",
+        overline: "Anime ",
+        title: "YLEAFUN",
+        desc: "Figure PVC Statue Cartoon Anime Girls Action Figure Model Collection Ornaments",
+      },
+      {
+        id: 2,
+        url: "/1.png",
+        overline: "Anime ",
+        title: "HUNTER X HUNTER",
+        desc: "MIREN LO QUE SON ESTAS FIGURAS ULTRA CHIBIS 🥰🥰",
+      },
+      {
+        id: 3,
+        url: "/2.png",
+        overline: "Anime ",
+        title: "FIGURAS CHIBI DE JOJOS",
+        desc: "Nos arriesgamos y trajimos figuras de jojos 😎💖",
+      },
+      {
+        id: 4,
+        url: "/3.png",
+        overline: "Anime ",
+        title: "JUJUTSU KAISEN",
+        desc: "Después de todo lo que pasó en el anime y manga, no podía faltar JUJUTSU KAISEN 🥺🥺🥺",
+      },
+      {
+        id: 5,
+        url: "/4.png",
+        overline: "Anime ",
+        title: " KIMETSU ",
+        desc: "AL FIN TRAJIMOS POSTERS DE KIMETSU 💥💥",
+      },
+      {
+        id: 6,
+        url: "/5.png",
+        overline: "Anime ",
+        title: "TOKYO REVENGERS",
+        desc: "Llegaron más pósters... y no podían faltar de💥💥💥💥💥TOKYO REVENGERS 💥💥💥💥💥",
+      },
+      {
+        id: 7,
+        url: "/6.png",
+        overline: "Anime ",
+        title: "HAIKYUU",
+        desc: "🔥🔥 Y QUE MEJOR FORMA DE FESTEJAR QUE TRAYENDO MAS FIGURAS DE HAIKYUU 🔥🔥",
+      },
+      {
+        id: 8,
+        url: "/7.png",
+        overline: "Anime ",
+        title: "ONE PIECE",
+        desc: "Mide 27 CM e incluye caja",
+      },
+    ]);
     const itemsId = ref([{}, {}, {}, {}, {}, {}, {}]);
     const itemsCarousel = ref([
       {
         id: 1,
         name: 1,
-        url: "https://cdn.quasar.dev/img/mountains.jpg",
-        title: "First stop 1",
-        subtitle: "Mountains 1",
+        url: "s2.png",
+        title: null,
+        subtitle: null,
       },
       {
         id: 2,
         name: 2,
-        url: "https://cdn.quasar.dev/img/parallax1.jpg",
-        title: "First stop 3",
-        subtitle: "Mountains 3",
+        url: "s3.jpeg",
+        title: null,
+        subtitle: null,
       },
       {
         id: 3,
         name: 3,
-        url: "https://cdn.quasar.dev/img/parallax2.jpg",
-        title: "First stop 4",
-        subtitle: "Mountains 4",
+        url: "s1.jpg",
+        title: "Mar del Plata",
+        subtitle: null,
+      },
+      {
+        id: 4,
+        name: 4,
+        url: "s5.jpg",
+        title: "✨Anime- videojuegos - kpop✨",
+        subtitle: null,
       },
     ]);
     const scrollTargetRef = ref(null);
     const slide = ref(1);
 
     function onLoadRef(index, done) {
-      setTimeout(() => {
+      done();
+      /*setTimeout(() => {
         itemsRef.value.push({}, {}, {}, {}, {}, {}, {});
         done();
-      }, 2000);
+      }, 2000);*/
     }
     function onLoadId(index, done) {
-      setTimeout(() => {
+      done();
+      /*setTimeout(() => {
         itemsId.value.push({}, {}, {}, {}, {}, {}, {});
         done();
-      }, 2000);
+      }, 2000);*/
     }
     return {
       itemsCarousel,

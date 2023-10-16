@@ -30,8 +30,8 @@
     </q-page-container>
 
     <div
-      class="q-pa-lg section footer-classic context-dark bg-image"
-      style="background: #2d3246"
+      class="q-pa-lg section footer-classic context-dark bg-image "
+      style="background: #AA336A"
     >
       <div class="container">
         <div class="row row-30">
