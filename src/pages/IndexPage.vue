@@ -40,7 +40,7 @@
         <div
           v-for="(item, index) in itemsRef"
           :key="index"
-          class="caption row q-mt-md col-3 q-pa-md"
+          class="caption row q-mt-md col-12 col-md-3 q-pa-md"
         >
           <q-card class="my-card full-width full-height" flat bordered>
             <q-img :src="'images/' + item.url" class="" />

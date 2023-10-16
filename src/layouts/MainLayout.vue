@@ -1,27 +1,29 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-pink-4 text-grey-2 q-pl-md">
-      <div class="flex q-py-sm">
-        <span class="q-pr-sm">Telfefono/Whatsapp: +54 911 2235 1904</span>
+      <div class="row q-py-sm">
+        <div class="col-12 col-md-6">
+          <span class="q-pr-sm">Whatsapp: +54 911 2235 1904</span>
 
-        <q-avatar size="20px" class="q-mr-md">
-          <img src="~assets/whatsapp.png" />
-        </q-avatar>
+          <q-avatar size="15px" class="q-mr-md">
+            <img src="~assets/whatsapp.png" />
+          </q-avatar>
 
-        <span class="q-px-sm q-mr-sm">mitaku.anime@gmail.com</span>
+          <span class="q-pr-sm q-mr-sm">mitaku.anime@gmail.com</span>
 
-        <q-avatar size="20px" class="">
-          <img src="~assets/gmail.png" />
-        </q-avatar>
+          <q-avatar size="15px" class="">
+            <img src="~assets/gmail.png" />
+          </q-avatar>
+        </div>
 
-        <q-space />
-
-        <q-avatar size="20px" class="q-mx-sm">
-          <img src="~assets/facebook.png" />
-        </q-avatar>
-        <q-avatar size="20px" class="q-mx-sm">
-          <img src="~assets/instagram.png" />
-        </q-avatar>
+        <div class="col-12 col-md-6 row justify-end">
+          <q-avatar size="20px" class="q-mx-sm">
+            <img src="~assets/facebook.png" />
+          </q-avatar>
+          <q-avatar size="20px" class="q-mx-sm">
+            <img src="~assets/instagram.png" />
+          </q-avatar>
+        </div>
       </div>
     </q-header>
 
@@ -30,8 +32,8 @@
     </q-page-container>
 
     <div
-      class="q-pa-lg section footer-classic context-dark bg-image "
-      style="background: #AA336A"
+      class="q-pa-lg section footer-classic context-dark bg-image"
+      style="background: #aa336a"
     >
       <div class="container">
         <div class="row row-30">
@@ -58,7 +60,7 @@
             </div>
           </div>
 
-          <div class="col">
+          <div class="col q-pl-md">
             <div class="text-bold" style="font-size: 18px">Contacts</div>
             <dl class="contact-list">
               <dt>Direccion: 798 South Park Avenue, New York, USA</dt>
