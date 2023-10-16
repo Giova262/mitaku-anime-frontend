@@ -13,7 +13,7 @@
           v-for="(slide, i) in itemsCarousel"
           :key="i + 'slide'"
           :name="slide.name"
-          :img-src="'public/images/' + slide.url"
+          :img-src="'images/' + slide.url"
         >
           <div
             v-if="slide.title || slide.subtitle"
@@ -43,7 +43,7 @@
           class="caption row q-mt-md col-3 q-pa-md"
         >
           <q-card class="my-card full-width" flat bordered>
-            <q-img :src="'public/images/' + item.url" class="" />
+            <q-img :src="'images/' + item.url" class="" />
 
             <q-card-section>
               <div class="text-overline text-orange-9">{{ item.overline }}</div>
