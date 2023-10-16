@@ -42,7 +42,7 @@
           :key="index"
           class="caption row q-mt-md col-3 q-pa-md"
         >
-          <q-card class="my-card full-width" flat bordered>
+          <q-card class="my-card full-width full-height" flat bordered>
             <q-img :src="'images/' + item.url" class="" />
 
             <q-card-section>
